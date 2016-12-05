@@ -219,6 +219,10 @@
             {
               "path": "/print",
               "title": "打印"
+            },
+            {
+              "path": "/exportExcel",
+              "title": "导出Excel"
             }
           ]
         }
