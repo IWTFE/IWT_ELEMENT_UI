@@ -1,4 +1,5 @@
 <script>
+  import exportExcel from '../../../packages/exportExcel/exportExcel';
   export default {
     data () {
       return {
@@ -61,6 +62,9 @@
 				}],
         tabletitle: {'title':['#','姓名','性别','年龄','生日','地址']}
       }
+    },
+    components:{
+      'export-excel': exportExcel
     }
   }
 </script>
@@ -69,7 +73,6 @@
 ## exportExcel 导出Excel文件
 
 ### 基础用法
-导入
 插入export-excel标签，并传表头和表格数据（listData，listTitle）
 
 :::demo 参数listData 是一个数组，listTitle是一个{"title":[...]}的对象

@@ -213,7 +213,7 @@
               "title": "图表"
             },
             {
-              "path": "/clip",
+              "path": "/cropper",
               "title": "剪切图片"
             },
             {

@@ -59,7 +59,6 @@ import Rate from '../packages/rate';
 import Steps from '../packages/steps';
 import Step from '../packages/step';
 import locale from 'element-ui/src/locale';
-import exportExcel from '../packages/exportExcel';
 
 const install = function(Vue, opts = {}) {
   /* istanbul ignore if */
@@ -119,7 +118,6 @@ const install = function(Vue, opts = {}) {
   Vue.component(Print.name, Print);
   Vue.component(Rate.name, Rate);
   Vue.component(Steps.name, Steps);
-  Vue.component(exportExcel.name, exportExcel);
   Vue.component(Step.name, Step);
 
   Vue.use(Loading.directive);
@@ -199,6 +197,5 @@ module.exports = {
   Print,
   Rate,
   Steps,
-  Step,
-  exportExcel
+  Step
 };
