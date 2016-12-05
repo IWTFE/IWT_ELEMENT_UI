@@ -29,9 +29,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ElemeFE/element.git"
+    "url": ""
   },
-  "homepage": "http://element.eleme.io",
+  "homepage": "",
   "keywords": [
     "eleme",
     "vue",
@@ -39,7 +39,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ElemeFE/element/issues"
+    "url": ""
   },
   "dependencies": {
     "async-validator": "^1.6.6",
@@ -50,7 +50,9 @@
     "wind-dom": "0.0.3"
   },
   "peerDependencies": {
-    "vue": "^2.0.0"
+    "vue": "^2.0.0",
+    "highcharts":""
+
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",

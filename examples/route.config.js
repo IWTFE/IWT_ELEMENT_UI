@@ -1,33 +1,32 @@
 import navConfig from './nav.config.json';
 import langs from './i18n/route.json';
 
-
 const registerRoute = (navConfig) => {
     let route = [];
     Object.keys(navConfig).forEach((lang, index) => {
         let navs = navConfig[lang];
-    route.push({
-        path: `/${ lang }/component`,
-        redirect: `/${ lang }/component/installation`,
-        component: require(`./pages/${ lang }/component.vue`),
-        children: []
+        route.push({
+            path: `/${ lang }/component`,
+            redirect: `/${ lang }/component/installation`,
+            component: require(`./pages/${ lang }/component.vue`),
+            children: []
+        });
+        navs.forEach(nav => {
+            if (nav.groups) {
+                nav.groups.forEach(group => {
+                    group.list.forEach(nav => {
+                        addRoute(nav, lang, index);
+                    });
+                });
+            } else if (nav.children) {
+                nav.children.forEach(nav => {
+                    addRoute(nav, lang, index);
+                });
+            } else {
+                addRoute(nav, lang, index);
+            }
+        });
     });
-    navs.forEach(nav => {
-        if (nav.groups) {
-        nav.groups.forEach(group => {
-            group.list.forEach(nav => {
-            addRoute(nav, lang, index);
-    });
-    });
-    } else if (nav.children) {
-        nav.children.forEach(nav => {
-            addRoute(nav, lang, index);
-    });
-    } else {
-        addRoute(nav, lang, index);
-    }
-});
-});
     function addRoute(page, lang, index) {
         const component = page.path === '/changelog'
             ? require(`./pages/${ lang }/changelog.vue`)
@@ -76,13 +75,6 @@ const generateMiscRoutes = function(lang) {
         component: require(`./pages/${ lang }/resource.vue`)
     };
 
-    let mobileRoute = {
-        path: `/${ lang }/mobile`, // 移动端
-        meta: { lang },
-        name: 'mobile' + lang,
-        component: require(`./pages/${ lang }/mobile.vue`)
-    };
-
     let indexRoute = {
         path: `/${ lang }`, // 首页
         meta: { lang },
@@ -90,7 +82,7 @@ const generateMiscRoutes = function(lang) {
         component: require(`./pages/${ lang }/index.vue`)
     };
 
-    return [guideRoute, resourceRoute, indexRoute, mobileRoute];
+    return [guideRoute, resourceRoute, indexRoute];
 };
 
 langs.forEach(lang => {
@@ -102,8 +94,6 @@ route.push({
     name: 'play',
     component: require('./play/index.vue')
 });
-
-
 
 let userLanguage = localStorage.getItem('ELEMENT_LANGUAGE') || window.navigator.language || 'en-US';
 let defaultPath = '/en-US';

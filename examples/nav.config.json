@@ -207,6 +207,18 @@
             {
               "path": "/card",
               "title": "Card 卡片"
+            },
+            {
+              "path": "/chart",
+              "title": "图表"
+            },
+            {
+              "path": "/clip",
+              "title": "剪切图片"
+            },
+            {
+              "path": "/print",
+              "title": "打印"
             }
           ]
         }
@@ -421,6 +433,18 @@
             {
               "path": "/card",
               "title": "Card"
+            },
+            {
+              "path": "/chart",
+              "title": "chart"
+            },
+            {
+              "path": "/clip",
+              "title": "clipImages"
+            },
+            {
+              "path": "/print",
+              "title": "print"
             }
           ]
         }

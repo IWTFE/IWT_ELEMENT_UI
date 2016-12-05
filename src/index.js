@@ -52,6 +52,9 @@ import Spinner from '../packages/spinner';
 import Message from '../packages/message';
 import Badge from '../packages/badge';
 import Card from '../packages/card';
+import Chart from '../packages/chart';
+import Clip from '../packages/clip';
+import Print from '../packages/print';
 import Rate from '../packages/rate';
 import Steps from '../packages/steps';
 import Step from '../packages/step';
@@ -110,6 +113,9 @@ const install = function(Vue, opts = {}) {
   Vue.component(Spinner.name, Spinner);
   Vue.component(Badge.name, Badge);
   Vue.component(Card.name, Card);
+  Vue.component(Chart.name, Chart);
+  Vue.component(Clip.name, Clip);
+  Vue.component(Print.name, Print);
   Vue.component(Rate.name, Rate);
   Vue.component(Steps.name, Steps);
   Vue.component(Step.name, Step);
@@ -186,6 +192,9 @@ module.exports = {
   Message,
   Badge,
   Card,
+  Chart,
+  Clip,
+  Print,
   Rate,
   Steps,
   Step

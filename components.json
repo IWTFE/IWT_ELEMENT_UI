@@ -51,6 +51,9 @@
   "message": "./packages/message/index.js",
   "badge": "./packages/badge/index.js",
   "card": "./packages/card/index.js",
+  "chart": "./packages/chart/index.js",
+  "clip": "./packages/clip/index.js",
+  "print": "./packages/print/index.js",
   "rate": "./packages/rate/index.js",
   "steps": "./packages/steps/index.js",
   "step": "./packages/step/index.js"
