@@ -58,6 +58,8 @@ import Print from '../packages/print';
 import Rate from '../packages/rate';
 import Steps from '../packages/steps';
 import Step from '../packages/step';
+import Cropper from '../packages/cropper';
+import ExportExcel from '../packages/exportExcel';
 import locale from 'element-ui/src/locale';
 
 const install = function(Vue, opts = {}) {
@@ -119,6 +121,8 @@ const install = function(Vue, opts = {}) {
   Vue.component(Rate.name, Rate);
   Vue.component(Steps.name, Steps);
   Vue.component(Step.name, Step);
+  Vue.component(Cropper.name, Cropper);
+  Vue.component(ExportExcel.name, ExportExcel);
 
   Vue.use(Loading.directive);
 
@@ -197,5 +201,7 @@ module.exports = {
   Print,
   Rate,
   Steps,
-  Step
+  Step,
+  Cropper,
+  ExportExcel
 };

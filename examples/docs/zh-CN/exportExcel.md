@@ -1,5 +1,4 @@
 <script>
-  import exportExcel from '../../../packages/exportExcel/exportExcel';
   export default {
     data () {
       return {
@@ -62,9 +61,6 @@
 				}],
         tabletitle: {'title':['#','姓名','性别','年龄','生日','地址']}
       }
-    },
-    components:{
-      'export-excel': exportExcel
     }
   }
 </script>
@@ -82,7 +78,6 @@
     <export-excel :listtitle="tabletitle" :listdata="tabledata"></export-excel>
 </template>
 <script>
-  import exportExcel from '../../../packages/exportExcel/exportExcel';
   export default {
     data () {
       return {
@@ -145,9 +140,6 @@
 				}],
         tabletitle: {'title':['#','姓名','性别','年龄','生日','地址']}
       }
-    },
-    components:{
-      'export-excel': exportExcel
     }
   }
 </script>

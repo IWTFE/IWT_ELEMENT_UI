@@ -16,6 +16,7 @@
 import fileUpload from '.'
 
 export default {
+  name:'example-file-upload',
   components: {
     fileUpload
   }

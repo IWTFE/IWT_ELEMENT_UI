@@ -56,5 +56,7 @@
   "print": "./packages/print/index.js",
   "rate": "./packages/rate/index.js",
   "steps": "./packages/steps/index.js",
-  "step": "./packages/step/index.js"
+  "step": "./packages/step/index.js",
+  "cropper": "./packages/cropper/index.js",
+  "exportExcel": "./packages/exportExcel/index.js"
 }
