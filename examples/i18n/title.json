@@ -3,14 +3,13 @@
     "home": "Element - 网站快速成型工具",
     "guide": "指南 | Element",
     "component": "组件 | Element",
-    "resource": "资源 | Element",
-    "mobile":"移动端组件| Element"
+    "resource": "资源 | Element"
+
   },
   "en-US": {
     "home": "Element - A Desktop UI Toolkit for Web",
     "guide": "Guide | Element",
     "component": "Component | Element",
-    "resource": "Resource | Element",
-    "mobile":"mobile| Element"
+    "resource": "Resource | Element"
   }
 }
