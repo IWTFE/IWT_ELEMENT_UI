@@ -47,7 +47,7 @@ var box = {
 }
 var baseWidth = 100
 export default {
-  name: 'cropper-file-upload',
+  name: 'file-upload',
   props: {
     limit: {
       type: Number,
@@ -595,8 +595,6 @@ $height: 400px;
         }
 
         &__right-bottom {
-          height: 20px;
-          width: 20px;
           right: 0;
           bottom: 0;
           cursor: se-resize;
