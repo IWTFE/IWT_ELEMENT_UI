@@ -2,7 +2,7 @@
   <el-button v-on:click="printer()">打印</el-button>
 </template>
 <script type="text/javascript">
-  import "./style.css";
+  import "../src/style.css"
   export default {
     name:'el-print',
     props:{
@@ -34,6 +34,7 @@
             style.type = "text/css";
             style.rel = "stylesheet";
             style.href = stylesheet;
+            console.log(stylesheet)
           }else{
               var style = document.createElement("style");
               style.innerHTML = this.defaultStyle;

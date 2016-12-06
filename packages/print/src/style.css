@@ -1,0 +1,5 @@
+#print { font-size: 14px; width:650px; margin:0 auto; }
+#print .title { text-align:center; }
+#print .border { border-collapse:collapse }
+#print .border td,.border th { border:1px solid #000; }
+#print h2 { font-size: 1.2em;}

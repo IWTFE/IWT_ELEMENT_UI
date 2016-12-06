@@ -1,5 +1,4 @@
 <script>
-  import exportExcel from '../../../packages/exportExcel/exportExcel';
   export default {
     data () {
       return {
@@ -62,9 +61,6 @@
 				}],
         tabletitle: {'title':['#','姓名','性别','年龄','生日','地址']}
       }
-    },
-    components:{
-      'export-excel': exportExcel
     }
   }
 </script>
@@ -81,6 +77,72 @@
 <template>
     <export-excel :listtitle="tabletitle" :listdata="tabledata"></export-excel>
 </template>
+<script>
+  export default {
+    data () {
+      return {
+        tabledata: [{
+					id:1000,
+					name: 'lanqy1',
+					sex: 1,
+					age: 20,
+					birth:'1996-03-02',
+					addr:'广东广州天河体育中心'
+				}, {
+					id:1001,
+					name: 'lanqy2',
+					sex: 1,
+					age: 20,
+					birth:'1996-03-02',
+					addr:'广东广州天河体育中心'
+				}, {
+					id:1002,
+					name: 'lanqy3',
+					sex: 0,
+					age: 20,
+					birth:'1996-03-02',
+					addr:'广东广州天河体育中心'
+				}, {
+					id:1003,
+					name: 'lanqy4',
+					sex: 1,
+					age: 20,
+					birth:'1996-03-02',
+					addr:'广东广州天河体育中心'
+				}, {
+					id:1004,
+					name: 'lanqy5',
+					sex: 1,
+					age: 20,
+					birth:'1996-03-02',
+					addr:'广东广州天河体育中心'
+				}, {
+					id:1005,
+					name: 'lanqy6',
+					sex: 1,
+					age: 20,
+					birth:'1996-03-02',
+					addr:'广东广州天河体育中心'
+				}, {
+					id:1006,
+					name: 'lanqy7',
+					sex: 1,
+					age: 20,
+					birth:'1996-03-02',
+					addr:'广东广州天河体育中心'
+				}, {
+					id:1007,
+					name: 'lanqy8',
+					sex: 1,
+					age: 20,
+					birth:'1996-03-02',
+					addr:'广东广州天河体育中心'
+				}],
+        tabletitle: {'title':['#','姓名','性别','年龄','生日','地址']}
+      }
+    }
+  }
+</script>
 
 ```
 :::

@@ -1,4 +1,4 @@
-import fileUpload from './file-upload/file-upload';
+import fileUpload from './file-upload/example';
 
 /* istanbul ignore next */
 fileUpload.install = function install(Vue) {
