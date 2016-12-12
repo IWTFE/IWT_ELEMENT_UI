@@ -182,6 +182,58 @@ title: {
                               }())
                           }]
                 };
+                       var options4 = {
+                                  chart: {
+                                            plotBackgroundColor: null,
+                                            plotBorderWidth: null,
+                                            plotShadow: false,
+                                            type: 'pie'
+                                        },
+                                        title: {
+                                            text: 'Browser market shares January, 2015 to May, 2015'
+                                        },
+                                        tooltip: {
+                                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                                        },
+                                        plotOptions: {
+                                            pie: {
+                                                allowPointSelect: true,
+                                                cursor: 'pointer',
+                                                dataLabels: {
+                                                    enabled: true,
+                                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                                    style: {
+                                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        series: [{
+                                            name: 'Brands',
+                                            colorByPoint: true,
+                                            data: [{
+                                                name: 'Microsoft Internet Explorer',
+                                                y: 56.33
+                                            }, {
+                                                name: 'Chrome',
+                                                y: 24.03,
+                                                sliced: true,
+                                                selected: true
+                                            }, {
+                                                name: 'Firefox',
+                                                y: 10.38
+                                            }, {
+                                                name: 'Safari',
+                                                y: 4.77
+                                            }, {
+                                                name: 'Opera',
+                                                y: 0.91
+                                            }, {
+                                                name: 'Proprietary or Undetectable',
+                                                y: 0.2
+                                            }]
+                                        }]
+                                };
 
 
   export default {
@@ -191,6 +243,7 @@ title: {
         options1: options1,
         options2: options2,
         options3: options3,
+        options4: options4
 
       };
     },
@@ -225,7 +278,7 @@ title: {
 
 用于页面中展示重要的提示信息。
 
-### 基本用法1
+### 基本用法2
 
 基础折线
 
@@ -244,7 +297,7 @@ title: {
 
 用于页面中展示重要的提示信息。
 
-### 基本用法1
+### 基本用法3
 
 基础折线
 
@@ -253,6 +306,21 @@ title: {
 <template>
   <section>
     <highcharts :options="options3" ref="highcharts"></highcharts>
+
+  </section>
+</template>
+```
+:::
+
+### 基本用法3
+
+基础折线
+
+::: demo Alert 组件提供四种主题，由`type`属性指定，默认值为`info`。
+```html
+<template>
+  <section>
+    <highcharts :options="options4" ref="highcharts"></highcharts>
 
   </section>
 </template>
