@@ -3,3 +3,4 @@
 #print .border { border-collapse:collapse }
 #print .border td,.border th { border:1px solid #000; }
 #print h2 { font-size: 1.2em;}
+.text-r { text-align: right;}
