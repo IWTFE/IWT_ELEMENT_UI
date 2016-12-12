@@ -1,148 +1,277 @@
 <script>
+  import expTool from '../../../packages/exportExcel/export.js';
   export default {
-    data () {
+    data() {
       return {
-        tabledata: [{
-					id:1000,
-					name: 'lanqy1',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1001,
-					name: 'lanqy2',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1002,
-					name: 'lanqy3',
-					sex: 0,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1003,
-					name: 'lanqy4',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1004,
-					name: 'lanqy5',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1005,
-					name: 'lanqy6',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1006,
-					name: 'lanqy7',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1007,
-					name: 'lanqy8',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}],
-        tabletitle: {'title':['#','姓名','性别','年龄','生日','地址']}
+        tableData: [{
+          date: '2016-05-03',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333,
+          tag: '家'
+        }, {
+          date: '2016-05-02',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333,
+          tag: '公司'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333,
+          tag: '家'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333,
+          tag: '公司'
+        }],
+        tableData3: [{
+          date: '2016-05-03',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-02',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-08',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-06',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-07',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }]
+      };
+    },
+    methods: {
+      m1: function(){
+        expTool.getExcel("table1");
+      },
+      m2: function(){
+        expTool.getExcel("table2");
       }
     }
-  }
+  };
 </script>
 
+<style>
+  .el-table .info-row {
+    background: #c9e5f5;
+  }
 
-## exportExcel 导出Excel文件
+  .el-table .positive-row {
+    background: #e2f0e4;
+  }
+</style>
 
-### 基础用法
-插入export-excel标签，并传表头和表格数据（listData，listTitle）
 
-:::demo 参数listData 是一个数组，listTitle是一个{"title":[...]}的对象
+### 基础表格导出
 
+基础的表格导出用法。
+
+:::demo 只需要将定义的ID传到导出方法
+```html
+  <template>
+    <el-button @click="m1">导出</el-button>
+    <el-table
+      id="table1"
+      :data="tableData"
+      style="width: 100%">
+      <el-table-column
+        prop="date"
+        label="日期"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="address"
+        label="地址">
+      </el-table-column>
+    </el-table>
+  </template>
+
+  <script>
+    export default {
+      data() {
+        return {
+          tableData: [{
+            date: '2016-05-02',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1518 弄'
+          }, {
+            date: '2016-05-04',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1517 弄'
+          }, {
+            date: '2016-05-01',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1519 弄'
+          }, {
+            date: '2016-05-03',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1516 弄'
+          }]
+        }
+      }
+    }
+  </script>
+```
+:::
+
+### 多级表头导出
+
+:::demo 只需要将定义的ID传到导出方法
 ```html
 <template>
-    <export-excel :listtitle="tabletitle" :listdata="tabledata"></export-excel>
+  <el-button @click="m2">导出</el-button>
+  <el-table
+    :data="tableData3"
+    border
+    id="table2"
+    style="width: 100%">
+    <el-table-column
+      prop="date"
+      label="日期"
+      width="150">
+    </el-table-column>
+    <el-table-column label="配送信息">
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="120">
+      </el-table-column>
+      <el-table-column label="地址">
+        <el-table-column
+          prop="province"
+          label="省份"
+          width="120">
+        </el-table-column>
+        <el-table-column
+          prop="city"
+          label="市区"
+          width="120">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          label="地址"
+          width="300">
+        </el-table-column>
+        <el-table-column
+          prop="zip"
+          label="邮编"
+          width="120">
+        </el-table-column>
+      </el-table-column>
+    </el-table-column>
+  </el-table>
 </template>
+
 <script>
   export default {
-    data () {
+    data() {
       return {
-        tabledata: [{
-					id:1000,
-					name: 'lanqy1',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1001,
-					name: 'lanqy2',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1002,
-					name: 'lanqy3',
-					sex: 0,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1003,
-					name: 'lanqy4',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1004,
-					name: 'lanqy5',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1005,
-					name: 'lanqy6',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1006,
-					name: 'lanqy7',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}, {
-					id:1007,
-					name: 'lanqy8',
-					sex: 1,
-					age: 20,
-					birth:'1996-03-02',
-					addr:'广东广州天河体育中心'
-				}],
-        tabletitle: {'title':['#','姓名','性别','年龄','生日','地址']}
+        tableData3: [{
+          date: '2016-05-03',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-02',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-08',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-06',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-07',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }]
       }
     }
   }
 </script>
-
 ```
 :::
